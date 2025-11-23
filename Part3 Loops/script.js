@@ -65,26 +65,40 @@
 //   }
 // }
 
-// prime number 
-let userInput = prompt("Enter Any Number :");
+// prime number
+// let userInput = prompt("Enter Any Number :");
 
-if (userInput === null) {
-  console.log("Cancelled :");
-} else {
-  var n = Number(userInput);
-  if (isNaN(n)) {
-    console.log("Invalid Number");
-  } else {
-    if (n > 0) {
-      let isPrime = true;
-      for (let i = 2; i <= Math.floor(n / 2); i++) {
-        if (n % i === 0) {
-          isPrime = false;
-        }
-      }
-      console.log(isPrime);
-    } else {
-      console.log("should be +ve and more than zero :");
+// if (userInput === null) {
+//   console.log("Cancelled :");
+// } else {
+//   var n = Number(userInput);
+//   if (isNaN(n)) {
+//     console.log("Invalid Number");
+//   } else {
+//     if (n > 0) {
+//       let isPrime = true;
+//       for (let i = 2; i <= Math.floor(n / 2); i++) {
+//         if (n % i === 0) {
+//           isPrime = false;
+//         }
+//       }
+//       console.log(isPrime);
+//     } else {
+//       console.log("should be +ve and more than zero :");
+//     }
+//   }
+// }
+
+function isPrime(n) {
+  if (n <= 1) return false;
+  if (n === 2) return true;
+  if (n % 2 === 0) return false;
+
+  for (let i = 3; i <= Math.floor(Math.sqrt(n)); i += 2) {
+    if (n % i === 0) {
+      return false;
     }
   }
+  return true;
 }
+console.log(isPrime(13));
