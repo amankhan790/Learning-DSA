@@ -9,18 +9,31 @@
 // }
 // console.log(max);
 
-// finding second max element
+// // finding second max element
+// let arr = [20, 40, 99, 38, 206, 384];
+
+// let max = Math.max(arr[0], arr[1]);
+// let sMax = Math.min(arr[0], arr[1]);
+
+// for (let i = 2; i < arr.length; i++) {
+//   if (arr[i] > max) {
+//     sMax = max;
+//     max = arr[i];
+//   } else if (arr[i] > sMax && max != arr[i]) {
+//     sMax = arr[i];
+//   }
+// }
+// console.log(sMax, max);
+
+// Reversing the array
 let arr = [20, 40, 99, 38, 206, 384];
+let temp = new Array(arr.length)
 
-let max = Math.max(arr[0], arr[1]);
-let sMax = Math.min(arr[0], arr[1]);
-
-for (let i = 2; i < arr.length; i++) {
-  if (arr[i] > max) {
-    sMax = max;
-    max = arr[i];
-  } else if (arr[i] > sMax && max != arr[i]) {
-    sMax = arr[i];
-  }
+let j = 0;
+for(let i = arr.length - 1; i>=0; i--){
+  temp[j] = arr[i]
+  j++
 }
-console.log(sMax, max);
+console.log(temp);
+
+
